@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Dashboard', [DashboardController::class,'index']);
+
+Route::get('/login', [LoginController::class,'halamanlogin'])->name('login');
+Route::post('/postlogin', [LoginController::class,'postlogin'])->name('postlogin');
+Route::get('/logout', [LoginController::class,'logout'])->name('logout');
+
+Route::group(['middleware' => ['auth','ceklevel:admin,mahasiswa']], function (){
+    Route::get('/Dashboard', [DashboardController::class,'index'])->name('dashboard');
+});
