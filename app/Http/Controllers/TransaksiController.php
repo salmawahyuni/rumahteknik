@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\mahasiswa;
+use App\Models\Transaksi;
 
-class MahasiswaController extends Controller
+class TransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $dtMahasiswa = mahasiswa::all();
-        
-        return view('Mahasiswa.Biodata', compact ('dtMahasiswa'));
+        $dtTransaksi = Transaksi::all();
+        return view('Mahasiswa.Transaksi', compact('dtTransaksi'));
     }
 
     /**
@@ -26,7 +25,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('Mahasiswa.Create-Biodata');
+        return view('Mahasiswa.Create-Transaksi');
     }
 
     /**
@@ -37,17 +36,21 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        Mahasiswa::create([
-            'namamhs'=>$request->namamhs,
-            'npm'=>$request->npm,
-            'prodi'=>$request->prodi,
-            'nohp'=>$request->nohp,
-            'email'=>$request->email
+        Transaksi::create([
+            'email'=>$request->email,
+            'namabarang'=>$request->namabarang,
+            'jumlah'=>$request->jumlah,
+            'namadosen'=>$request->namadosen,
+            'ruangkuliah'=>$request->ruangkuliah,
+            'matakuliah'=>$request->matakuliah,
+            'waktupinjam'=>$request->waktupinjam,
+            'waktukembali'=>$request->waktukembali,
+            'keterangan'=>$request->keterangan,
+            'statuspengembalian'=>$request->statuspengembalian,
+            'petugas'=>$request->petugas
         ]);
 
-        return redirect('biodata')->with('success', 'Data Disimpan!');
-
-        //return redirect('biodata')->with('toast_success', 'Data Berhasil Disimpan!');
+        return redirect('transaksi')->with('success', 'Data Disimpan!');
     }
 
     /**
@@ -69,8 +72,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        $dtMahasiswa = mahasiswa::findorfail($id);
-        return view('Mahasiswa.Edit-Biodata', compact ('dtMahasiswa'));
+        $dtTransaksi = Transaksi::findorfail($id);
+        return view('Mahasiswa.Edit-Transaksi', compact ('dtTransaksi'));
     }
 
     /**
@@ -82,10 +85,10 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dtMahasiswa = mahasiswa::findorfail($id);
-        $dtMahasiswa->update($request->all());
+        $dtTransaksi = Transaksi::findorfail($id);
+        $dtTransaksi->update($request->all());
 
-        return redirect('biodata')->with('success', 'Perubahan Disimpan!');
+        return redirect('transaksi')->with('success', 'Perubahan Disimpan!');
     }
 
     /**
@@ -96,8 +99,8 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        $dtMahasiswa = mahasiswa::findorfail($id);
-        $dtMahasiswa->delete();
+        $dtTransaksi = Transaksi::findorfail($id);
+        $dtTransaksi->delete();
         return back()->with('info', 'Data Dihapus!');
     }
 }

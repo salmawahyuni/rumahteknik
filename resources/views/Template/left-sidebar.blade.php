@@ -64,7 +64,7 @@
               @endif
               @if (auth()->user()->level == "mahasiswa")
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route ('transaksi')}}" class="nav-link">
                 <i class="fas fa-list-ol nav-icon"></i>
                   <p>Formulir Peminjaman</p>
                 </a>
