@@ -46,7 +46,7 @@ class MahasiswaController extends Controller
         ]);
 
         return redirect('biodata')->with('success', 'Data Berhasil Disimpan!');
-        
+
         //return redirect('biodata')->with('toast_success', 'Data Berhasil Disimpan!');
     }
 
@@ -69,7 +69,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dtMahasiswa = mahasiswa::findorfail($id);
+        return view('Mahasiswa.Edit-Biodata', compact ('dtMahasiswa'));
     }
 
     /**
@@ -81,7 +82,10 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dtMahasiswa = mahasiswa::findorfail($id);
+        $dtMahasiswa->update($request->all());
+
+        return redirect('biodata')->with('success', 'Perubahan Berhasil Disimpan!');
     }
 
     /**
@@ -92,6 +96,8 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dtMahasiswa = mahasiswa::findorfail($id);
+        $dtMahasiswa->delete();
+        return back()->with('info', 'Data Berhasil Dihapus!');
     }
 }

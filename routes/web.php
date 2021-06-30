@@ -34,3 +34,6 @@ Route::group(['middleware' => ['auth','ceklevel:admin,mahasiswa']], function (){
 Route::get('/biodata', [MahasiswaController::class,'index'])->name('biodata');
 Route::get('/create-biodata', [MahasiswaController::class,'create'])->name('create-biodata');
 Route::post('/simpan-biodata', [MahasiswaController::class,'store'])->name('simpan-biodata');
+Route::get('/edit-biodata/{id}', [MahasiswaController::class,'edit'])->name('edit-biodata');
+Route::post('/update-biodata/{id}', [MahasiswaController::class,'update'])->name('update-biodata');
+Route::get('/delete-biodata/{id}', [MahasiswaController::class,'destroy'])->name('delete-biodata');

@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Halaman Data Mahasiswa</h1>
+            <h1 class="m-0 text-dark">Edit Data Mahasiswa</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -42,42 +42,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="card card-info card-outline">
-        <div class="card-header">
-            <div class="card-tools">
-            <a href="{{route('create-biodata')}}" class="btn btn-success">Tambah Data<i class="fas fa-plus-square"></i></a>
-            </div>
-        </div>
+        
         
         <div class="card-body">
-            <table class="table table-bordered">
-                <tr>
-                    <th>No.</th>
-                    <th>Nama</th>
-                    <th>NPM</th>
-                    <th>Prodi</th>
-                    <th>No. HP</th>
-                    <th>Email</th>
-                    <th>Aksi</th>
-                </tr>
-                @foreach ($dtMahasiswa as $item)
-                <tr>
-                    <td>{{$loop -> iteration}}</td>
-                    <td>{{$item -> namamhs}}</td>
-                    <td>{{$item -> npm}}</td>
-                    <td>{{$item -> prodi}}</td>
-                    <td>{{$item -> nohp}}</td>
-                    <td>{{$item -> email}}</td>
-                    <td>
-                        <a href="{{route ('edit-biodata', $item->id)}}">Edit</a>
-                        |
-                        <a href="{{route ('delete-biodata', $item->id)}}">Hapus</a>
-                    </td>
-                </tr>
-                @endforeach
-            </table>
+            <form action="{{route('update-biodata', $dtMahasiswa->id)}}" method="post">
+            {{csrf_field()}}
+              <div class="form-group">
+                <label>Nama Lengkap</label>
+                <input type="text" id="namamhs" name="namamhs" class="form-control" placeholder="Nama Mahasiwa" value="{{$dtMahasiswa->namamhs}}">
+              </div>
+              <div class="form-group">
+                <label>NPM</label>
+                <input type="text" id="npm" name="npm" class="form-control" placeholder="NPM" value="{{$dtMahasiswa->npm}}">
+              </div>
+              <div class="form-group">
+                <label>Program Studi</label>
+                  <select class="form-control" id="prodi" name="prodi" placeholder="Program Studi" value="{{$dtMahasiswa->prodi}}">
+                    <option>S1 Informatika</option>
+                    <option>S1 Arsitek</option>
+                    <option>S1 Teknik Sipil</option>
+                    <option>S1 Perencanaan Wilayah dan Kota</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label>No. HP</label>
+                <input type="text" id="nohp" name="nohp" class="form-control" placeholder="No. HP" value="{{$dtMahasiswa->nohp}}">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" id="email" name="email" class="form-control" placeholder="Email" value="{{$dtMahasiswa->email}}">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              </div>
+            </form>
         </div>
       </div>
-
+      
     </div>
     <!-- /.content -->
   </div>
@@ -102,5 +103,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- jQuery -->
 @include('Template.script')
-
-@include('sweetalert::alert')
