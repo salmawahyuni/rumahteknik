@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>LOGIN</b></a>
+    <a href="{{url('/')}}"><b>LOGIN</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -58,6 +58,9 @@
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <!-- /.col -->
+          <p class="mb-0">
+            <a href="{{route('registrasi')}}" class="text-center">Register a new membership</a>
+          </p>
         </div>
       </form>
 

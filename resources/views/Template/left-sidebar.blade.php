@@ -30,7 +30,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              @if (auth()->user()->level == "mahasiswa")
+              @if (auth()->user()->level == "admin")
               <li class="nav-item">
                 <a href="#" class="nav-link">
                 <i class="fas fa-boxes nav-icon"></i>
@@ -38,7 +38,7 @@
                 </a>
               </li>
               @endif
-              @if (auth()->user()->level == "mahasiswa")
+              @if (auth()->user()->level == "admin")
               <li class="nav-item">
                 <a href="#" class="nav-link">
                 <i class="fas fa-list-ol nav-icon"></i>
@@ -51,6 +51,30 @@
                 <a href="#" class="nav-link">
                 <i class="fas fa-user-graduate nav-icon"></i>
                   <p>Data Mahasiswa</p>
+                </a>
+              </li>
+              @endif
+              @if (auth()->user()->level == "mahasiswa")
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="fas fa-boxes nav-icon"></i>
+                  <p>Informasi Barang</p>
+                </a>
+              </li>
+              @endif
+              @if (auth()->user()->level == "mahasiswa")
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="fas fa-list-ol nav-icon"></i>
+                  <p>Formulir Peminjaman</p>
+                </a>
+              </li>
+              @endif
+              @if (auth()->user()->level == "mahasiswa")
+              <li class="nav-item">
+                <a href="{{route('biodata')}}" class="nav-link">
+                <i class="fas fa-user-graduate nav-icon"></i>
+                  <p>Biodata Mahasiswa</p>
                 </a>
               </li>
               @endif

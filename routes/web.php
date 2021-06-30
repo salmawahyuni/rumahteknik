@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MahasiswaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,7 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,mahasiswa']], function (){
     Route::get('/Dashboard', [DashboardController::class,'index'])->name('dashboard');
 });
+
+Route::get('/biodata', [MahasiswaController::class,'index'])->name('biodata');
+Route::get('/create-biodata', [MahasiswaController::class,'create'])->name('create-biodata');
+Route::post('/simpan-biodata', [MahasiswaController::class,'store'])->name('simpan-biodata');
