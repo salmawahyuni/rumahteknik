@@ -58,10 +58,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="form-group">
                 <label>Program Studi</label>
                   <select class="form-control" id="prodi" name="prodi" placeholder="Program Studi">
-                  <option>S1 Informatika</option>
-                  <option>S1 Arsitek</option>
-                  <option>S1 Teknik Sipil</option>
-                  <option>S1 Perencanaan Wilayah dan Kota</option>
+                    <option>S1 Informatika</option>
+                    <option>S1 Arsitek</option>
+                    <option>S1 Teknik Sipil</option>
+                    <option>S1 Perencanaan Wilayah dan Kota</option>
                   </select>
               </div>
               <div class="form-group">

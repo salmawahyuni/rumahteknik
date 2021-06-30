@@ -45,7 +45,9 @@ class MahasiswaController extends Controller
             'email'=>$request->email
         ]);
 
-        return redirect('biodata');
+        return redirect('biodata')->with('success', 'Data Berhasil Disimpan!');
+        
+        //return redirect('biodata')->with('toast_success', 'Data Berhasil Disimpan!');
     }
 
     /**
