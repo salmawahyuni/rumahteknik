@@ -98,4 +98,10 @@ class BarangController extends Controller
         $dtBarang->delete();
         return back()->with('info', 'Data Dihapus!');
     }
+
+    public function informasi()
+    {
+        $dtBarang = Barang::all();
+        return view('Mahasiswa.InfoBarang', compact('dtBarang'));
+    }
 }

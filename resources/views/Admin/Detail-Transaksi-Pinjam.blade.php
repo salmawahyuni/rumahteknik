@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-    <title>Informasi Barang</title>
+    <title>Data Mahasiswa</title>
     @include('Template.head')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -26,12 +26,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Halaman Informasi Barang</h1>
+            <h1 class="m-0 text-dark">Peminjaman Barang</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item active">Informasi Barang</li>
+              <li class="breadcrumb-item"><a href="{{route('transaksipinjam')}}">Lihat Daftar</a></li>
+              <li class="breadcrumb-item active">Daftar Peminjaman</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -43,40 +43,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="card card-info card-outline">
         <div class="card-header">
-            <div class="card-tools">
-            <a href="{{route('create-barang')}}" class="btn btn-success">Tambah Data<i class="fas fa-plus-square"></i></a>
-            </div>
+            
         </div>
         
         <div class="card-body">
-            <table class="table table-bordered">
-                <tr>
-                    <th>No.</th>
-                    <th>Kode Barang</th>
-                    <th>Nama Barang</th>
-                    <th>Stok</th>
-                    <th>Kondisi</th>
-                    <th>Harga</th>
-                    <th>Spesifikasi</th>
-                    <th>Aksi</th>
-                </tr>
-                @foreach ($dtBarang as $item)
-                <tr>
-                    <td>{{$loop -> iteration}}</td>
-                    <td>{{$item -> kodebarang}}</td>
-                    <td>{{$item -> namabarang}}</td>
-                    <td>{{$item -> stok}}</td>
-                    <td>{{$item -> kondisi}}</td>
-                    <td>{{$item -> harga}}</td>
-                    <td>{{$item -> spesifikasi}}</td>
-                    <td>
-                        <a href="{{route ('edit-barang', $item->id)}}">Edit</a>
-                        |
-                        <a href="{{route ('delete-barang', $item->id)}}">Hapus</a>
-                    </td>
-                </tr>
-                @endforeach
-            </table>
+<pre>
+  Email Mahasiswa       : {{$dtTransaksi -> email}}</th>
+  Nama Barang           : {{$dtTransaksi -> namabarang}}</th>
+  Jumlah                : {{$dtTransaksi -> jumlah}}</th>
+  Nama Dosen            : {{$dtTransaksi -> namadosen}}</th>
+  Ruang Kuliah          : {{$dtTransaksi -> ruangkuliah}}</th>
+  Mata Kuliah           : {{$dtTransaksi -> matakuliah}}</th>
+  Waktu Pinjam          : {{$dtTransaksi -> waktupinjam}}</th>
+  Waktu Kembali         : {{$dtTransaksi -> waktukembali}}</th>
+  Keterangan            : {{$dtTransaksi -> keterangan}}</th>
+  Status Pengembalian   : {{$dtTransaksi -> statuspengembalian}}</th>
+  Petugas               : {{$dtTransaksi -> petugas}}</th>
+</pre>
         </div>
       </div>
 

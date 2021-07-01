@@ -44,31 +44,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         <div class="card-header">
             <div class="card-tools">
-            <a href="#" class="btn btn-success">Buat Peminjaman<i class="fas fa-plus-square"></i></a>
+            <a href="{{route('create-transaksi')}}" class="btn btn-success">Buat Peminjaman<i class="fas fa-plus-square"></i></a>
             </div>
         </div>
         
         <div class="card-body">
             <table class="table table-bordered">
-                <tr>
+            <tr>
                     <th>No.</th>
                     <th>Kode Barang</th>
                     <th>Nama Barang</th>
                     <th>Stok</th>
                     <th>Kondisi</th>
-                    <th>Harga</th>
+                    
                     <th>Spesifikasi</th>
                 </tr>
-                
+                @foreach ($dtBarang as $item)
                 <tr>
                     <td>{{$loop -> iteration}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$item -> kodebarang}}</td>
+                    <td>{{$item -> namabarang}}</td>
+                    <td>{{$item -> stok}}</td>
+                    <td>{{$item -> kondisi}}</td>
+                    
+                    <td>{{$item -> spesifikasi}}</td>
                 </tr>
+                @endforeach
                 
             </table>
         </div>

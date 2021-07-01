@@ -100,4 +100,11 @@ class MahasiswaController extends Controller
         $dtMahasiswa->delete();
         return back()->with('info', 'Data Dihapus!');
     }
+
+    public function lihatdata()
+    {
+        $dtMahasiswa = mahasiswa::all();
+        
+        return view('Admin.BiodataMahasiswa', compact ('dtMahasiswa'));
+    }
 }

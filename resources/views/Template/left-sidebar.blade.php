@@ -40,7 +40,7 @@
               @endif
               @if (auth()->user()->level == "admin")
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route ('transaksipinjam')}}" class="nav-link">
                 <i class="fas fa-list-ol nav-icon"></i>
                   <p>Daftar Peminjaman</p>
                 </a>
@@ -48,7 +48,7 @@
               @endif
               @if (auth()->user()->level == "admin")
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route ('biodatamhs')}}" class="nav-link">
                 <i class="fas fa-user-graduate nav-icon"></i>
                   <p>Data Mahasiswa</p>
                 </a>
@@ -56,7 +56,7 @@
               @endif
               @if (auth()->user()->level == "mahasiswa")
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route ('infobarang')}}" class="nav-link">
                 <i class="fas fa-boxes nav-icon"></i>
                   <p>Informasi Barang</p>
                 </a>

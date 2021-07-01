@@ -30,7 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('transaksi')}}">Lihat Data</a></li>
+              <li class="breadcrumb-item"><a href="{{route('transaksipinjam')}}">Lihat Data</a></li>
               <li class="breadcrumb-item active">Daftar Peminjaman</li>
             </ol>
           </div><!-- /.col -->
@@ -47,44 +47,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card-body">
             <form action="{{route('update-transaksi', $dtTransaksi->id)}}" method="post">
             {{csrf_field()}}
-              <div class="form-group">
-                <label>Email Mahasiswa</label>
-                <input type="text" id="email" name="email" class="form-control" placeholder="Email Mahasiswa" value="{{$dtTransaksi->email}}">
-              </div>
-              <div class="form-group">
-                <label>Nama Barang</label>
-                  <select class="form-control" id="namabarang" name="namabarang" placeholder="Nama Barang" value="{{$dtTransaksi->namabarang}}">
-                    <option>LCD Epson</option>
-                    <option>Terminal</option>
-                    <option>Sambungan HDMI</option>
-                    <option>Speaker</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                <label>Jumlah</label>
-                <input type="integer" id="jumlah" name="jumlah" class="form-control" placeholder="Jumlah" value="{{$dtTransaksi->jumlah}}">
-              </div>
-              <div class="form-group">
-                <label>Nama Dosen Pengajar</label>
-                <input type="text" id="namadosen" name="namadosen" class="form-control" placeholder="Nama Dosen" value="{{$dtTransaksi->namadosen}}">
-              </div>
-              <div class="form-group">
-                <label>Ruang Kuliah</label>
-                  <select class="form-control" id="ruangkuliah" name="ruangkuliah" placeholder="Ruang Kuliah" value="{{$dtTransaksi->ruangkuliah}}">
-                    <option>RK 1.06</option>
-                    <option>Studio PWK</option>
-                    <option>Studio Informatika</option>
-                    <option>Studio Desain</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                <label>Mata Kuliah</label>
-                <input type="text" id="matakuliah" name="matakuliah" class="form-control" placeholder="Matakuliah" value="{{$dtTransaksi->matakuliah}}">
-              </div>
-              <div class="form-group">
-                <label>Waktu Pinjam</label>
-                <input type="date" id="waktupinjam" name="waktupinjam" class="form-control" value="{{$dtTransaksi->waktupinjam}}">
-              </div>
               <div class="form-group">
                 <label>Waktu Kembali</label>
                 <input type="date" id="waktukembali" name="waktukembali" class="form-control" value="{{$dtTransaksi->waktukembali}}">

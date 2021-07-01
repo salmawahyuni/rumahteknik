@@ -69,9 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{$item -> email}}</td>
                     <td>
                         <a href="{{route ('edit-biodata', $item->id)}}">Edit</a>
-                        |
-                        <a href="{{route ('delete-biodata', $item->id)}}">Hapus</a>
-                    </td>
+                   </td>
                 </tr>
                 @endforeach
             </table>

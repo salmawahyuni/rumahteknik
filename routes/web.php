@@ -51,6 +51,9 @@ Route::get('/edit-transaksi/{id}', [TransaksiController::class,'edit'])->name('e
 Route::post('/update-transaksi/{id}', [TransaksiController::class,'update'])->name('update-transaksi');
 Route::get('/delete-transaksi/{id}', [TransaksiController::class,'destroy'])->name('delete-transaksi');
 
+//info barang untuk mahasiswa
+Route::get('/infobarang', [BarangController::class,'informasi'])->name('infobarang');
+
 //barang untuk admin
 Route::get('/barang', [BarangController::class,'index'])->name('barang');
 Route::get('/create-barang', [BarangController::class,'create'])->name('create-barang');
@@ -58,3 +61,10 @@ Route::post('/simpan-barang', [BarangController::class,'store'])->name('simpan-b
 Route::get('/edit-barang/{id}', [BarangController::class,'edit'])->name('edit-barang');
 Route::post('/update-barang/{id}', [BarangController::class,'update'])->name('update-barang');
 Route::get('/delete-barang/{id}', [BarangController::class,'destroy'])->name('delete-barang');
+
+//transaksi untuk admin
+Route::get('/transaksipinjam', [TransaksiController::class,'bacadata'])->name('transaksipinjam');
+Route::get('/detailtransaksi/{id}', [TransaksiController::class,'detailpinjam'])->name('detailtransaksi');
+
+//biodata mahasiswa untu admin
+Route::get('/biodatamhs', [MahasiswaController::class,'lihatdata'])->name('biodatamhs');

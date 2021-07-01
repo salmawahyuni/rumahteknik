@@ -73,7 +73,7 @@ class TransaksiController extends Controller
     public function edit($id)
     {
         $dtTransaksi = Transaksi::findorfail($id);
-        return view('Mahasiswa.Edit-Transaksi', compact ('dtTransaksi'));
+        return view('Admin.Edit-Transaksi', compact ('dtTransaksi'));
     }
 
     /**
@@ -88,7 +88,7 @@ class TransaksiController extends Controller
         $dtTransaksi = Transaksi::findorfail($id);
         $dtTransaksi->update($request->all());
 
-        return redirect('transaksi')->with('success', 'Perubahan Disimpan!');
+        return redirect('transaksipinjam')->with('success', 'Perubahan Disimpan!');
     }
 
     /**
@@ -102,5 +102,17 @@ class TransaksiController extends Controller
         $dtTransaksi = Transaksi::findorfail($id);
         $dtTransaksi->delete();
         return back()->with('info', 'Data Dihapus!');
+    }
+
+    public function bacadata()
+    {
+        $dtTransaksi = Transaksi::all();
+        return view('Admin.Transaksi-Pinjam', compact('dtTransaksi'));
+    }
+
+    public function detailpinjam($id)
+    {
+        $dtTransaksi = Transaksi::findorfail($id);
+        return view('Admin.Detail-Transaksi-Pinjam', compact ('dtTransaksi'));
     }
 }
