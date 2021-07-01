@@ -32,7 +32,7 @@
             <ul class="nav nav-treeview">
               @if (auth()->user()->level == "admin")
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('barang')}}" class="nav-link">
                 <i class="fas fa-boxes nav-icon"></i>
                   <p>Data Barang</p>
                 </a>
