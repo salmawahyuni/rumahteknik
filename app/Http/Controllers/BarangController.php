@@ -67,7 +67,8 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dtBarang = Barang::findorfail($id);
+        return view('Admin.Edit-Barang', compact ('dtBarang'));
     }
 
     /**
@@ -79,7 +80,10 @@ class BarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dtBarang = Barang::findorfail($id);
+        $dtBarang->update($request->all());
+
+        return redirect('barang')->with('success', 'Perubahan Disimpan!');
     }
 
     /**
@@ -90,6 +94,8 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dtBarang = Barang::findorfail($id);
+        $dtBarang->delete();
+        return back()->with('info', 'Data Dihapus!');
     }
 }

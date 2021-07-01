@@ -69,9 +69,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{$item -> harga}}</td>
                     <td>{{$item -> spesifikasi}}</td>
                     <td>
-                        <a href="#">Edit</a>
+                        <a href="{{route ('edit-barang', $item->id)}}">Edit</a>
                         |
-                        <a href="#">Hapus</a>
+                        <a href="{{route ('delete-barang', $item->id)}}">Hapus</a>
                     </td>
                 </tr>
                 @endforeach

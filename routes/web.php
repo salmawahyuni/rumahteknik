@@ -55,6 +55,6 @@ Route::get('/delete-transaksi/{id}', [TransaksiController::class,'destroy'])->na
 Route::get('/barang', [BarangController::class,'index'])->name('barang');
 Route::get('/create-barang', [BarangController::class,'create'])->name('create-barang');
 Route::post('/simpan-barang', [BarangController::class,'store'])->name('simpan-barang');
-//Route::get('/edit-transaksi/{id}', [TransaksiController::class,'edit'])->name('edit-transaksi');
-//Route::post('/update-transaksi/{id}', [TransaksiController::class,'update'])->name('update-transaksi');
-//Route::get('/delete-transaksi/{id}', [TransaksiController::class,'destroy'])->name('delete-transaksi');
+Route::get('/edit-barang/{id}', [BarangController::class,'edit'])->name('edit-barang');
+Route::post('/update-barang/{id}', [BarangController::class,'update'])->name('update-barang');
+Route::get('/delete-barang/{id}', [BarangController::class,'destroy'])->name('delete-barang');
