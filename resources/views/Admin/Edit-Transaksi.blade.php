@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             {{csrf_field()}}
               <div class="form-group">
                 <label>Waktu Kembali</label>
-                <input type="date" id="waktukembali" name="waktukembali" class="form-control" value="{{$dtTransaksi->waktukembali}}">
+                <input type="datetime-local" id="waktukembali" name="waktukembali" class="form-control" value="{{$dtTransaksi->waktukembali}}">
               </div>
               <div class="form-group">
                 <label>Keterangan</label>

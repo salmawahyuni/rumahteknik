@@ -50,18 +50,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
-                    <th>No.</th>
-                    <th>Email Mahasiswa</th>
-                    <th>Nama Barang</th>
-                    <th>Jumlah</th>
-                    <th>Nama Dosen</th>
-                    <th>Ruang Kuliah</th>
-                    <th>Mata Kuliah</th>
-                    <th>Waktu Pinjam</th>
-                    <th>Waktu Kembali</th>
-                    <th>Keterangan</th>
-                    <th>Status Pengembalian</th>
-                    <th>Petugas</th>
+                    <th><center>No.</center></th>
+                    <th><center>Email Mahasiswa</center></th>
+                    <th><center>Nama Barang</center></th>
+                    <th><center>Jumlah</center></th>
+                    <th><center>Nama Dosen</center></th>
+                    <th><center>Ruang Kuliah</center></th>
+                    <th><center>Mata Kuliah</center></th>
+                    <th><center>Waktu Pinjam</center></th>
+                    <th><center>Keterangan</center></th>
+                    <th><center>Status Pengembalian</center></th>
+                    <th><center>Petugas</center></th>
                 </tr>
                 @foreach ($dtTransaksi as $item)
                 <tr>
@@ -73,7 +72,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{$item -> ruangkuliah}}</td>
                     <td>{{$item -> matakuliah}}</td>
                     <td>{{$item -> waktupinjam}}</td>
-                    <td>{{$item -> waktukembali}}</td>
                     <td>{{$item -> keterangan}}</td>
                     <td>{{$item -> statuspengembalian}}</td>
                     <td>{{$item -> petugas}}</td>

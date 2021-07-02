@@ -49,15 +49,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
-                    <th>No.</th>
-                    <th>Email Mahasiswa</th>
-                    <th>Nama Barang</th>
-                    <th>Jumlah</th>
-                    <th>Waktu Pinjam</th>
-                    <th>Keterangan</th>
-                    <th>Status Pengembalian</th>
-                    <th>Petugas</th>
-                    <th>Aksi</th>
+                    <th><center>No.</center></th>
+                    <th><center>Email Mahasiswa</center></th>
+                    <th><center>Nama Barang</center></th>
+                    <th><center>Jumlah</center></th>
+                    <th><center>Waktu Pinjam</center></th>
+                    <th><center>Keterangan</center></th>
+                    <th><center>Status Pengembalian</center></th>
+                    <th><center>Petugas</center></th>
+                    <th style="width :20%"><center>Aksi</center></th>
                 </tr>
                 @foreach ($dtTransaksi as $item)
                 <tr>

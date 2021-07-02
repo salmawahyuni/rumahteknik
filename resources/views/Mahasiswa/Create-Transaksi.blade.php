@@ -83,30 +83,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="form-group">
                 <label>Waktu Pinjam</label>
-                <input type="date" id="waktupinjam" name="waktupinjam" class="form-control">
+                <input type="datetime-local" id="waktupinjam" name="waktupinjam" class="form-control">
               </div>
-              <div class="form-group">
-                <label>Waktu Kembali</label>
-                <input type="date" id="waktukembali" name="waktukembali" class="form-control">
-              </div>
-              <div class="form-group">
-                <label>Keterangan</label>
-                  <select class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan">
-                    <option>Diterima</option>
-                    <option>Ditolak</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                <label>Status Pengembalian</label>
-                  <select class="form-control" id="statuspengembalian" name="statuspengembalian" placeholder="Status Pengembalian">
-                    <option>Sudah Kembali</option>
-                    <option>Belum Kembali</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                <label>Nama Petugas</label>
-                <input type="text" id="petugas" name="petugas" class="form-control" placeholder="Petugas Penerima">
-              </div>
+              
               <div class="form-group">
                 <button type="submit" class="btn btn-success">Simpan Data</button>
               </div>

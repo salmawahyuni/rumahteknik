@@ -47,12 +47,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
-                    <th>No.</th>
-                    <th>Nama</th>
-                    <th>NPM</th>
-                    <th>Prodi</th>
-                    <th>No. HP</th>
-                    <th>Email</th>
+                    <th><center>No.</center></th>
+                    <th><center>Nama</center></th>
+                    <th><center>NPM</center></th>
+                    <th><center>Prodi</center></th>
+                    <th><center>No. HP</center></th>
+                    <th><center>Email</center></th>
                </tr>
                 @foreach ($dtMahasiswa as $item)
                 <tr>

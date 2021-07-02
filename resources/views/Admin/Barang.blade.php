@@ -51,14 +51,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
-                    <th>No.</th>
-                    <th>Kode Barang</th>
-                    <th>Nama Barang</th>
-                    <th>Stok</th>
-                    <th>Kondisi</th>
-                    <th>Harga</th>
-                    <th>Spesifikasi</th>
-                    <th>Aksi</th>
+                    <th><center>No.</center></th>
+                    <th><center>Kode Barang</center></th>
+                    <th><center>Nama Barang</center></th>
+                    <th><center>Stok</center></th>
+                    <th><center>Kondisi</center></th>
+                    <th><center>Harga</center></th>
+                    <th><center>Spesifikasi</center></th>
+                    <th><center>Aksi</center></th>
                 </tr>
                 @foreach ($dtBarang as $item)
                 <tr>
