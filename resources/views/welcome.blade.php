@@ -21,11 +21,8 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="card">
-            <h1><center>Rumah Tangga Fakultas Teknik</center></h1>
-            <h2><center>Universitas Muhammadiyah Banjarmasin</center></h2>
-                <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-                    <img src = "{{asset('image/logo-umbjm.png')}}">
+        <div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background:url('{{asset('image/gedungumbjm.jpg')}}') center center no-repeat; background-size: cover;">
+            <h1><center>Rumah Tangga Fakultas Teknik Universitas Muhammadiyah Banjarmasin</center></h1>
                     @if (Route::has('login'))
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                         @auth
@@ -38,7 +35,7 @@
                     @endauth
                         </div>
                     @endif
-                </div>
+                
 
         </div>
     </body>

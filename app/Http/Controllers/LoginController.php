@@ -38,6 +38,6 @@ class LoginController extends Controller
             'remember_token' => Str::random(60),
         ]);
 
-        return view('welcome')->with('succes', 'Register Berhasil!');
+        return back()->with('succes', 'Register Berhasil!');
     }
 }

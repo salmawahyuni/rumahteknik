@@ -77,5 +77,7 @@
 
 <!-- jQuery -->
 @include('Template.script')
+
+@include('sweetalert::alert')
 </body>
 </html>

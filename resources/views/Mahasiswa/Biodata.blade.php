@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         <div class="card-header">
             <div class="card-tools">
-            <a href="{{route('create-biodata')}}" class="btn btn-success">Tambah Data<i class="fas fa-plus-square"></i></a>
+            <a href="{{route('create-biodata')}}" class="btn btn-success">Isi Biodata<i class="fas"></i></a>
             </div>
         </div>
         

@@ -17,7 +17,7 @@ class CreateMahasiswasTable extends Migration
             $table->id();
             $table->string ('namamhs', 30);
             $table->string ('npm', 13);
-            $table->string ('prodi', 30);
+            $table->string ('prodi', 50);
             $table->string ('nohp', 12);
             $table->string ('email', 30);
             $table->timestamps();
