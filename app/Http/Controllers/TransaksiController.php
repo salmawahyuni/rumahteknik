@@ -14,6 +14,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
+        //->orderBy('waktupinjam', 'DESC')->get();
         $dtTransaksi = Transaksi::all();
         return view('Mahasiswa.Transaksi', compact('dtTransaksi'));
     }
