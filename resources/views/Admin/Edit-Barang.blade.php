@@ -47,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         
         <div class="card-body">
-        <form action="{{route('update-barang', $dtBarang->id)}}" method="post">
+        <form action="{{route('update-barang', $dtBarang->id)}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
               <div class="form-group">
                 <label>Kode Barag</label>
@@ -75,6 +75,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="form-group">
                 <label>Spesifikasi</label>
                 <textarea id="spesifikasi" name="spesifikasi" class="form-control">{{$dtBarang->spesifikasi}}</textarea>
+              </div>
+              <div class="form-group">
+                <label>Gambar</label>
+                <input type="file" id="gambar" name="gambar" class="form-control" placeholder="Pilih Gambar">
+              </div>
+              <div class="form-group">
+                <img src="{{asset('img/'. $dtBarang->gambar)}}" height="10%" width="10%" alt="" srcset="">
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-success">Simpan Perubahan</button>

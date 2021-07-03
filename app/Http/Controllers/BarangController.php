@@ -97,8 +97,24 @@ class BarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dtBarang = Barang::findorfail($id);
-        $dtBarang->update($request->all());
+        
+        $ubah = Barang::findorfail($id);
+        $awal = $ubah->gambar;
+
+        $dtBarang = [
+            'kodebarang' => $request['kodebarang'],
+            'namabarang'=>$request['namabarang'],
+            'stok'=>$request['stok'],
+            'kondisi'=>$request['kondisi'],
+            'harga'=>$request['harga'],
+            'spesifikasi'=>$request['spesifikasi'],
+            'gambar'=> $awal,
+        ];
+        $request->gambar->move(public_path().'/img', $awal);
+        $ubah->update($dtBarang);
+        
+        // $dtBarang = Barang::findorfail($id);
+        // $dtBarang->update($request->all());
 
         return redirect('barang')->with('success', 'Perubahan Disimpan!');
     }
@@ -111,8 +127,19 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        $dtBarang = Barang::findorfail($id);
-        $dtBarang->delete();
+        
+        $hapus = Barang::findorfail($id);
+
+        $file = public_path('/img/').$hapus->gambar;
+        //cek jika ada gambar
+        if (file_exists($file)){
+            //maka hapus file d folder public/img
+            @unlink($file);
+        }
+        
+        // $dtBarang = Barang::findorfail($id);
+        // $dtBarang->delete();
+        $hapus->delete();
         return back()->with('info', 'Data Dihapus!');
     }
 
