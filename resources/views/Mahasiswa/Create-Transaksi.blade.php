@@ -53,11 +53,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="form-group">
                 <label>Nama Barang</label>
-                  <select class="form-control" id="namabarang" name="namabarang" placeholder="Nama Barang">
-                    <option>LCD Epson</option>
-                    <option>Terminal</option>
-                    <option>Sambungan HDMI</option>
-                    <option>Speaker</option>
+                  <select class="form-control" id="barang_id" name="barang_id">
+                    <option disabled value>Pilih Barang</option>
+                    @foreach ($dtBarang as $item)
+                    <option value="{{$item->id}}">{{$item->namabarang}}</option>
+                    @endforeach
                   </select>
               </div>
               <div class="form-group">

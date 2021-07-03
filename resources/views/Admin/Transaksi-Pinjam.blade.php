@@ -63,7 +63,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <tr>
                     <td>{{$loop -> iteration}}</td>
                     <td>{{$item -> email}}</td>
-                    <td>{{$item -> namabarang}}</td>
+                    <td>{{$item -> barang->namabarang}}</td>
                     <td>{{$item -> jumlah}}</td>
                     <td>{{$item -> waktupinjam}}</td>
                     <td>{{$item -> keterangan}}</td>

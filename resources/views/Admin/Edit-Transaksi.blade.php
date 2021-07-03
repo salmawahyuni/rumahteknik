@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <input type="text" id="petugas" name="petugas" class="form-control" placeholder="Petugas Penerima" value="{{$dtTransaksi->petugas}}">
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-success">Simpan Data</button>
+                <button type="submit" class="btn btn-success">Simpan Validasi</button>
               </div>
             </form>
         </div>

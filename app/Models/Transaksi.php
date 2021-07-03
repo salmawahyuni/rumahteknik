@@ -10,6 +10,11 @@ class Transaksi extends Model
     protected $table ="transaksi";
     protected $primaryKey ="id";
     protected $fillable =[
-        'id','email','namabarang','jumlah','namadosen','ruangkuliah','matakuliah',
+        'id','email','barang_id','jumlah','namadosen','ruangkuliah','matakuliah',
         'waktupinjam','waktukembali','keterangan','statuspengembalian','petugas'];
+
+        public function barang()
+        {
+            return $this ->belongsTo(Barang::class);
+        }
 }

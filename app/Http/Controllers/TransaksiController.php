@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaksi;
+use App\Models\Barang;
 
 class TransaksiController extends Controller
 {
@@ -26,7 +27,8 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        return view('Mahasiswa.Create-Transaksi');
+        $dtBarang = Barang::all();
+        return view('Mahasiswa.Create-Transaksi',compact('dtBarang'));
     }
 
     /**
@@ -39,7 +41,7 @@ class TransaksiController extends Controller
     {
         Transaksi::create([
             'email'=>$request->email,
-            'namabarang'=>$request->namabarang,
+            'barang_id'=>$request->barang_id,
             'jumlah'=>$request->jumlah,
             'namadosen'=>$request->namadosen,
             'ruangkuliah'=>$request->ruangkuliah,
