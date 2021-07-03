@@ -58,6 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th><center>Kondisi</center></th>
                     <th><center>Harga</center></th>
                     <th><center>Spesifikasi</center></th>
+                    <th><center>Gambar</center></th>
                     <th><center>Aksi</center></th>
                 </tr>
                 @foreach ($dtBarang as $item)
@@ -69,6 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{$item -> kondisi}}</td>
                     <td>{{$item -> harga}}</td>
                     <td>{{$item -> spesifikasi}}</td>
+                    <td><a href="{{asset('img/'. $item -> gambar)}}" target="_blank" rel="noopener noreferrer">Lihat Gambar</td>
                     <td>
                         <a href="{{route ('edit-barang', $item->id)}}">Edit</a>
                         |

@@ -10,7 +10,7 @@ class Barang extends Model
     protected $table ="barang";
     protected $primaryKey ="id";
     protected $fillable =[
-        'id','kodebarang','namabarang','stok','kondisi','harga','spesifikasi'];
+        'id','kodebarang','namabarang','stok','kondisi','harga','spesifikasi','gambar'];
 
         public function transaksi()
         {

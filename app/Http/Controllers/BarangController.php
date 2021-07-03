@@ -36,14 +36,31 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        Barang::create([
-            'kodebarang'=>$request->kodebarang,
-            'namabarang'=>$request->namabarang,
-            'stok'=>$request->stok,
-            'kondisi'=>$request->kondisi,
-            'harga'=>$request->harga,
-            'spesifikasi'=>$request->spesifikasi
-        ]);
+
+        $nm = $request->gambar;
+        $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension();
+
+            $dtBarang = new Barang;
+            $dtBarang->kodebarang = $request->kodebarang;
+            $dtBarang->namabarang = $request->namabarang;
+            $dtBarang->stok = $request->stok;
+            $dtBarang->kondisi = $request->kondisi;
+            $dtBarang->harga = $request->harga;
+            $dtBarang->spesifikasi = $request->spesifikasi;
+            $dtBarang->gambar = $namaFile;
+
+            $nm->move(public_path().'/img', $namaFile);
+            $dtBarang->save();
+
+        // Barang::create([
+        //     'kodebarang'=>$request->kodebarang,
+        //     'namabarang'=>$request->namabarang,
+        //     'stok'=>$request->stok,
+        //     'kondisi'=>$request->kondisi,
+        //     'harga'=>$request->harga,
+        //     'spesifikasi'=>$request->spesifikasi,
+        //     'gambar'=>$request->gambar
+        // ]);
 
         return redirect('barang')->with('success', 'Data Disimpan!');
     }

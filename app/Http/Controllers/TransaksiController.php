@@ -16,7 +16,7 @@ class TransaksiController extends Controller
     public function index()
     {
         //->orderBy('waktupinjam', 'DESC')->get();
-        $dtTransaksi = Transaksi::all();
+        $dtTransaksi = Transaksi::latest()->get();
         return view('Mahasiswa.Transaksi', compact('dtTransaksi'));
     }
 
@@ -109,7 +109,7 @@ class TransaksiController extends Controller
 
     public function bacadata()
     {
-        $dtTransaksi = Transaksi::all();
+        $dtTransaksi = Transaksi::latest()->get();
         return view('Admin.Transaksi-Pinjam', compact('dtTransaksi'));
     }
 
