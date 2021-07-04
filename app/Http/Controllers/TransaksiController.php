@@ -119,4 +119,18 @@ class TransaksiController extends Controller
         $dtTransaksi = Transaksi::findorfail($id);
         return view('Admin.Detail-Transaksi-Pinjam', compact ('dtTransaksi'));
     }
+
+    public function search(Request $request)
+    {
+        $cari = $request->get('search');
+        if (!empty($cari)){
+            $dtBarang = Barang::where('namabarang', 'LIKE', '%'.$cari.'%')->first();
+            
+            $dtTransaksi = Transaksi::where('barang_id', 'LIKE', '%'.$dtBarang->id.'%')->get();
+            return view('Admin.Transaksi-Pinjam', compact('dtTransaksi'));
+        }
+        else 
+        return redirect('transaksipinjam');
+
+    }
 }

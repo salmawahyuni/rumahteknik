@@ -65,6 +65,7 @@ Route::get('/delete-barang/{id}', [BarangController::class,'destroy'])->name('de
 //transaksi untuk admin
 Route::get('/transaksipinjam', [TransaksiController::class,'bacadata'])->name('transaksipinjam');
 Route::get('/detailtransaksi/{id}', [TransaksiController::class,'detailpinjam'])->name('detailtransaksi');
+Route::get('/caribarang',[TransaksiController::class,'search'])->name('caribarang');
 
 //biodata mahasiswa untu admin
 Route::get('/biodatamhs', [MahasiswaController::class,'lihatdata'])->name('biodatamhs');
