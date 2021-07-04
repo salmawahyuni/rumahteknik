@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card-body">
 <pre>
   Email Mahasiswa       : {{$dtTransaksi -> email}}</th>
-  Nama Barang           : {{$dtTransaksi -> namabarang}}</th>
+  Nama Barang           : {{$dtTransaksi -> barang->namabarang}}</th>
   Jumlah                : {{$dtTransaksi -> jumlah}}</th>
   Nama Dosen            : {{$dtTransaksi -> namadosen}}</th>
   Ruang Kuliah          : {{$dtTransaksi -> ruangkuliah}}</th>
